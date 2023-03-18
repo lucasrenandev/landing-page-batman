@@ -1,11 +1,9 @@
 import { useRef, useState, useEffect } from "react"
 import {BiMenu} from "react-icons/bi"
 import {IoClose} from "react-icons/io5"
-import App from "../../App"
 import "../header/header.css"
 
 const Header = () => {
-  const [app, setApp] = useState(App)
   const [icon, setIcon] = useState(BiMenu)
   const navRef = useRef()
 
@@ -27,19 +25,11 @@ const Header = () => {
     })
   }
 
-  const reloadIndex = () => {
-    window.addEventListener("click", (e) => {
-      e.preventDefault()
-
-      setApp(location.reload())
-    })
-  }
-
   useEffect(hideScrollMenu)
 
   return (
       <header className="header">
-        <a href={app} onClick={reloadIndex} className='logo'>Batman A.K</a>
+        <a href='/' className='logo'>Batman A.K</a>
 
         <nav ref={navRef} onScroll={hideScrollMenu} className='navbar'>
           <ul className='nav-list'>
