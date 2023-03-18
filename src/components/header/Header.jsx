@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 import {BiMenu} from "react-icons/bi"
 import {IoClose} from "react-icons/io5"
 import App from "../../App"
@@ -8,13 +8,6 @@ const Header = () => {
   const [app, setApp] = useState(App)
   const [icon, setIcon] = useState(BiMenu)
   const navRef = useRef()
-
-  const hideScrollMenu = () => {
-    window.addEventListener("scroll", () => {
-      navRef.current.classList.remove("active")
-      setIcon(BiMenu)
-    })
-  }
 
   const toggleMenu = () => {
     if(navRef.current.classList.contains("active")) {
@@ -27,6 +20,13 @@ const Header = () => {
     }
   }
 
+  const hideScrollMenu = () => {
+    window.addEventListener("scroll", () => {
+      navRef.current.classList.remove("active")
+      setIcon(BiMenu)
+    })
+  }
+
   const reloadIndex = () => {
     window.addEventListener("click", (e) => {
       e.preventDefault()
@@ -34,6 +34,8 @@ const Header = () => {
       setApp(location.reload())
     })
   }
+
+  useEffect(hideScrollMenu)
 
   return (
       <header className="header">

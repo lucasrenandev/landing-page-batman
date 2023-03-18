@@ -1,3 +1,7 @@
+@media screen and (min-width: 1924px) {
+   
+}
+
 @media screen and (max-width: 1100px) {
     .header {
         padding: 17px 2%;
@@ -21,7 +25,7 @@
         right: 0;
         width: 100%;
         z-index: 1000;
-        background-color: rgb(0, 0, 78);
+        background-color: rgb(0, 0, 131);
         transition: 0.5s ease;
     }
 
