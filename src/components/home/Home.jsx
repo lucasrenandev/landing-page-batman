@@ -18,21 +18,21 @@ const Home = () => {
 
             <Fade right distance="80px" duration={1500} delay={200}>
                 <main className="home-container">
-                    <div className="home-box">
+                    <figure className="home-box">
                         <img src={home_image1} alt="Home image 1" />
-                    </div>{/*End home box*/}
+                    </figure>{/*End home box*/}
 
-                    <div className="home-box">
+                    <figure className="home-box">
                         <img src={home_image2} alt="Home image 2" />
-                    </div>{/*End home box*/}
+                    </figure>{/*End home box*/}
 
-                    <div className="home-box">
+                    <figure className="home-box">
                         <img src={home_image3} alt="Home image 3" />
-                    </div>{/*End home box*/}
+                    </figure>{/*End home box*/}
 
-                    <div className="home-box">
+                    <figure className="home-box">
                         <img src={home_image4} alt="Home image 4" />
-                    </div>{/*End home box*/}
+                    </figure>{/*End home box*/}
                 </main>{/*End home container*/}
             </Fade>
         </section>//End home section
