@@ -3,25 +3,25 @@ import {BiMenu} from "react-icons/bi"
 import {IoClose} from "react-icons/io5"
 import "../header/header.css"
 
-const Header = () => {
-  const [icon, setIcon] = useState(BiMenu)
+export default function Header(){
+  const [icon, setIcon] = useState(<BiMenu/>)
   const navRef = useRef()
 
   const toggleMenu = () => {
     if(navRef.current.classList.contains("active")) {
       navRef.current.classList.remove("active")
-      setIcon(BiMenu)
+      setIcon(<BiMenu/>)
     }
     else {
       navRef.current.classList.add("active")
-      setIcon(IoClose)
+      setIcon(<IoClose/>)
     }
   }
 
   const hideScrollMenu = () => {
     window.addEventListener("scroll", () => {
       navRef.current.classList.remove("active")
-      setIcon(BiMenu)
+      setIcon(<BiMenu/>)
     })
   }
 
@@ -48,5 +48,3 @@ const Header = () => {
     </header>//End header
   )
 }
-
-export default Header
